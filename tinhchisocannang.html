@@ -5,20 +5,34 @@
     <title>Title</title>
 </head>
 <body>
-<p>Tinh chi so can nang</p>
-<script>
+<h1> TÍNH CHỈ SỐ CÂN NẶNG </h1>
+<label> Nhập cân nặng(kg)</label>
+<input type="number" id="cannang">
+<br>
+<br>
+<label> Nhập chiều cao(m)</label>
+<input type="number" id="chieucao">
+<br>
+<br>
+<button onclick="ketqua()"> Kiểm tra</button>
+<p id="demo"></p>
 
-  let a = prompt("can nang a: ");
-  let b = prompt('chieu cao b: ');
-  bmi =a / ( b ^ 2 );
-  if (bmi < 18)
-    document.write("Underweight");
-  else if (bmi < 25.0)
-    document.write("Normal");
-  else if (bmi < 30.0)
-    document.write("Overweight");
-  else
-    document.write("Obese");
+<script>
+    function ketqua() {
+        let a = +document.getElementById("cannang").value;
+        let b = +document.getElementById("chieucao").value;
+        let BMI;
+        BMI = a /(b**2) ;
+        if (BMI < 18) {
+            document.getElementById("demo").innerHTML=BMI + "Underweight";
+        } else if (BMI < 25.0) {
+            document.getElementById("demo").innerHTML=BMI + "Normal";
+        } else if (BMI < 30.0) {
+            document.getElementById("demo").innerHTML=BMI + "Overweight";
+        } else {
+            document.getElementById("demo").innerHTML=BMI + "Obese";
+        }
+    }
 
 </script>
 </body>
